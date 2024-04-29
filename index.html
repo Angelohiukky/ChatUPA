@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Chat Python</title>
+  </head>
+  <body>
+    <h1>Chat Python</h1>
+
+    <form action="/" method="POST">
+      <label for="nome">Nome:</label>
+      <input
+        type="text"
+        id="nome"
+        name="nome"
+        required
+        minlength="5"
+        placeholder="Digite seu nome completo"
+      />
+
+      <label for="setor">Setor:</label>
+      <input
+        type="text"
+        id="setor"
+        name="setor"
+        required
+        minlength="3"
+        placeholder="Digite um e-mail válido"
+      />
+
+      <label for="problema">Problema:</label>
+      <textarea
+        id="problema"
+        name="problema"
+        rows="5"
+        required
+        minlength="20"
+        placeholder="Conte-nos tudo"
+      ></textarea>
+
+      <button class="btn" type="submit">Enviar</button>
+    </form>
+
+    <p id="mensagem"></p>
+
+    <script>
+      const mensagemElement = document.getElementById("mensagem");
+
+      // Atualizar a mensagem quando a página for carregada
+      window.onload = function () {
+        const mensagem = document.querySelector("#mensagem").textContent;
+        if (mensagem) {
+          alert(mensagem);
+        }
+      };
+    </script>
+  </body>
+</html>
