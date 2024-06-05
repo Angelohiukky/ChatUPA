@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style1.css">
-    
-    <title>Respostas do Chat</title>
-</head>
-<body>
-    <h1>Respostas do Chat</h1>
-    
-    {% if respostas %}
-        <ul>
-            {% for resposta in respostas %}
-                <li>
-                    **Nome:** {{ resposta.nome }}<br>
-                    **Setor:** {{ resposta.setor }}<br>
-                    **Problema:** {{ resposta.problema }}
-                </li>
-            {% endfor %}
-        </ul>
-   
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style1.css" />
 
+    <title>Respostas do Chat</title>
+  </head>
+  <body>
+    <h1>Respostas do Chat</h1>
 
-
+    {% if respostas %}
+    <ul>
+      {% for resposta in respostas %}
+      <li>
+        **Nome:** {{ resposta.nome }}<br />
+        **Setor:** {{ resposta.setor }}<br />
+        **Problema:** {{ resposta.problema }}
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
