@@ -7,35 +7,34 @@ def index():
     if request.method == "GET":
         return render_template("index.html")
     else:
-        # Get the user's name and problem from the form
+        # Pegar o nome do usuário e o problema
         nome = request.form["Seu nome, por favor"]
         problema = request.form["Conta qual o problema"]
 
-        # Store the information in the database (implementation needed)
+        # Guardar a informação no banco de dados (necessário implementar)
 
         return render_template("index.html", mensagem="Valeu, já vamos resolver!!!")
 
 @app.route("/respostas")
 def mostrar_respostas():
-    # Connect to the database
+    # conectar com a database
     conexao = sqlite3.connect("chat.db")
     cursor = conexao.cursor()
 
-    # Fetch all responses from the 'respostas' table
+    # obter as respostas da tabela 'respostas'
     cursor.execute("SELECT * FROM respostas")
     respostas = cursor.fetchall()
 
-    # Close the database connection
+    # fechar a conexão com database
     conexao.close()
 
-    # Return the list of responses
+    # Retornar lista de respostas
     return respostas
 
-# Function to create the table in the database (already executed)
+# Função para criar uma tabela na database (já executado)
 def criar_tabela():
-    # ... (implementation as provided in the original code)
 
-# Create the table if it doesn't exist (only run once)
+# Criar a tebela se ela não existir (Apenas uma vez)
 criar_tabela()
 
 if __name__ == "__main__":
